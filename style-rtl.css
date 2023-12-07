@@ -1,0 +1,166 @@
+/*!
+Theme Name: newkadiner
+Theme URI: https://underscores.me/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Hi. I'm a starter theme called <code>newkadiner</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: newkadiner
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+newkadiner is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+@font-face {
+  font-family: "yekanbakhweb";
+  src: url("fonts/yekanbakh/YekanBakhFaNum-Thin.woff2");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "yekanbakhweb";
+  src: url("fonts/yekanbakh/YekanBakhFaNum-Light.woff2");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "yekanbakhweb";
+  src: url("fonts/yekanbakh/YekanBakhFaNum-Regular.woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "yekanbakhweb";
+  src: url("fonts/yekanbakh/YekanBakhFaNum-SemiBold.woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "yekanbakhweb";
+  src: url("fonts/yekanbakh/YekanBakhFaNum-Bold.woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "yekanbakhweb";
+  src: url("fonts/yekanbakh/YekanBakhFaNum-ExtraBold.woff2");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "yekanbakhweb";
+  src: url("fonts/yekanbakh/YekanBakhFaNum-Black.woff2");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "yekanbakhweb";
+  src: url("fonts/yekanbakh/YekanBakhFaNum-ExtraBlack.woff2");
+  font-weight: 910;
+}
+body {
+  font-family: yekanbakhweb !important;
+  direction: rtl;
+  margin: 0;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  font-size: 15px;
+  padding: 0;
+  color: #2e2e2e !important;
+}
+
+* {
+  box-sizing: border-box;
+  direction: rtl;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6, input, textarea {
+  font-family: yekanbakhweb !important;
+}
+
+h1 {
+  font-size: 27px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+h4 {
+  font-size: 19px;
+}
+
+h5 {
+  font-size: 17px;
+}
+
+h6 {
+  font-size: 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+}
+
+.lowMargined {
+  margin: 7px 0;
+}
+
+.mediumMargined {
+  margin: 15px 0;
+}
+
+.highMargined {
+  margin: 30px 0;
+}
+
+.extraHighMargined {
+  margin: 60px 0;
+}
+
+.lowPadding {
+  padding: 7px;
+}
+
+.mediumPadding {
+  padding: 15px;
+}
+
+.highPadding {
+  padding: 25px;
+}
+
+.sectionPadding {
+  padding: 40px 0;
+}
+
+.centeredText {
+  text-align: center;
+}
+
+.noPadding {
+  padding: 0;
+}
+
+.noMargin {
+  margin: 0;
+}
+
+.generalHeading h1, .generalHeading h2, .generalHeading h3, .generalHeading h4, .generalHeading h5, .generalHeading h6 {
+  margin: 0;
+}
+.generalHeading span {
+  font-size: 17px;
+  font-weight: 300;
+  margin-top: 5px;
+  display: block;
+}/*# sourceMappingURL=style-rtl.css.map */
