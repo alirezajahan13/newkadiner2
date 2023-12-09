@@ -142,7 +142,7 @@ function newkadiner_scripts() {
 	wp_style_add_data( 'newkadiner-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'newkadiner-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
+	wp_enqueue_style( 'layout-style', get_template_directory_uri().'/layout.css', array(), _S_VERSION );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -176,3 +176,86 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function track_post_views() {
+    if (is_single() && !is_bot()) {
+        $post_id = get_the_ID();
+        $views = get_post_meta($post_id, 'post_views', true);
+
+        $user_has_visited = isset($_COOKIE['visited_post_' . $post_id]);
+
+        if (!$user_has_visited) {
+            $views = ($views) ? $views + 1 : 1;
+            update_post_meta($post_id, 'post_views', $views);
+
+            setcookie('visited_post_' . $post_id, 'yes', time() + 24 * 3600, '/');
+        }
+    }
+}
+
+add_action('wp', 'track_post_views');
+
+function is_bot() {
+    $bots = array(
+        'Googlebot',
+        'Bingbot',
+        'Slurp',
+        'DuckDuckBot',
+    );
+
+    foreach ($bots as $bot) {
+        if (stripos($_SERVER['HTTP_USER_AGENT'], $bot) !== false) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function display_post_views() {
+    $post_id = get_the_ID();
+    $views = get_post_meta($post_id, 'post_views', true);
+    echo ($views ? $views : 0);
+}
+
+// function pagination_bar() {
+// 	global $wp_query;
+
+// 	$total_pages = $wp_query->max_num_pages;
+
+// 	if ($total_pages > 1){
+// 		global $wp_query;
+// 		$wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+// 		echo paginate_links(array(
+// 			'base' =>@add_query_arg('paged','%#%'),
+// 			'format' => '/page/%#%',
+// 			'current' => $current,
+// 			'total' => $total_pages,
+// 			'next_text' => '<span class="leftArrow"><svg width="12px" height="12px" xmlns="http://www.w3.org/2000/svg" fill="#3f3f3f" id="Layer_1" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve"><path fill="none" stroke="#505050" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="m20.5 26.5-12-12 12-12"></path></svg></span>',
+// 			'prev_text' => '<span class="rightArrow"><svg width="12px" height="12px" xmlns="http://www.w3.org/2000/svg" fill="#3f3f3f" id="Layer_1" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve"><path fill="none" stroke="#505050" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="m8.5 2.5 12 12-12 12"></path></svg></span>'
+// 		));
+// 	}
+// }
+
+function pagination_bar() {
+    global $wp_query;
+
+    $total_pages = $wp_query->max_num_pages;
+
+    if ($total_pages > 1){
+        global $wp_query;
+        $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+
+        $prev_link = get_previous_posts_link('قبلی');
+        $next_link = get_next_posts_link('بعدی', $total_pages);
+
+        if ($prev_link || $next_link) {
+            echo '<div class="pagination">';
+            if ($prev_link) {
+                echo '<span class="prev"><svg height="10" width="10" fill="#767676" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.881 511.881" xml:space="preserve" transform="rotate(-90)"><path d="M248.36 263.428a10.623 10.623 0 0 0 15.04 0L508.733 18.095c4.053-4.267 3.947-10.987-.213-15.04a10.763 10.763 0 0 0-14.827 0l-237.76 237.76L18.173 3.054c-4.266-4.16-10.986-4.053-15.146.214a10.763 10.763 0 0 0 0 14.827L248.36 263.428z"/><path d="M508.627 248.388c-4.267-4.053-10.773-4.053-14.933 0l-237.76 237.76-237.76-237.76c-4.267-4.053-10.987-3.947-15.04.213a10.763 10.763 0 0 0 0 14.827l245.333 245.333a10.623 10.623 0 0 0 15.04 0L508.84 263.428c4.053-4.267 3.947-10.987-.213-15.04z"/></svg>' . $prev_link . '</span>';
+            }
+            if ($next_link) {
+                echo '<span class="next"><svg height="10" width="10" fill="#767676" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.881 511.881" xml:space="preserve" transform="rotate(90)"><path d="M248.36 263.428a10.623 10.623 0 0 0 15.04 0L508.733 18.095c4.053-4.267 3.947-10.987-.213-15.04a10.763 10.763 0 0 0-14.827 0l-237.76 237.76L18.173 3.054c-4.266-4.16-10.986-4.053-15.146.214a10.763 10.763 0 0 0 0 14.827L248.36 263.428z"/><path d="M508.627 248.388c-4.267-4.053-10.773-4.053-14.933 0l-237.76 237.76-237.76-237.76c-4.267-4.053-10.987-3.947-15.04.213a10.763 10.763 0 0 0 0 14.827l245.333 245.333a10.623 10.623 0 0 0 15.04 0L508.84 263.428c4.053-4.267 3.947-10.987-.213-15.04z"/></svg>' . $next_link . '</span>';
+            }
+            echo '</div>';
+        }
+    }
+}

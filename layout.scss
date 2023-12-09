@@ -1,0 +1,522 @@
+@import 'sass/variables';
+@import 'sass/breakpoints';
+@import 'sass/source';
+
+.singleBox {
+    margin: 50px auto;
+    max-width: 1000px;
+}
+.whiteBg{
+    background-color: #fff;
+}
+.generalSinglePostStyle{
+    .entry-header{
+        .entry-title{
+            color: $textColorLowSat;
+            font-weight: 600;
+            @include xs{
+                font-size: 22px;
+            }
+        }
+    }
+    .post-thumbnail{
+        img{
+            border-radius: 10px;
+        }
+    }
+    .entry-content{
+        img{
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        h2{
+            position: relative;
+            width: max-content;
+            margin: 0;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            color: $mainColor;
+            font-weight: 600;
+            &::after{
+                position: absolute;
+                content: "";
+                background-color: #474b4f;
+                width: 80%;
+                height: 1px;
+                bottom: 0;
+                right: 0;
+                border-radius: 1px;
+            }
+            @include xs{
+                font-size: 19px;
+            }
+        }
+        h3,h4,h5,h6{
+            color: $textColorLowSat;
+            font-weight: 600;
+            @include xs{
+                font-size: 17px;
+            }
+        }
+        p{
+            color: $textColorLowSat;
+            text-align: justify;
+        }
+    }
+    .postFooterSec{
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+        font-size: 13px;
+        .postAuthor,.postDate,.postLinkToBlog,.numViewCount{
+            margin-left: 15px;
+        }
+    }
+}
+.single-post{
+    .comments-area{
+        .commentSection{
+            .comment-reply-title{
+                display: none;
+            }
+            .comment-respond{
+                form{
+                    padding: 25px;
+                    padding-top: 0;
+                    @include xs{
+                        padding: 5px;
+                    }
+                    .comment-form-comment{
+                        @include xs{
+                            margin-bottom: 10px;
+                        }
+                        label{
+                            margin-bottom: 0;
+                            padding-right: 10px;
+                        }
+                        textarea{
+                            height: 120px;
+                        }
+                    }
+                    .comment-form-author{
+                        display: inline-block;
+                        width: 48%;
+                        margin-left: 16px;
+                        @include xs{
+                            display: block;
+                            width: 100%;
+                            margin-left: 0;
+                            margin-bottom: 10px;
+                        }
+                        label{
+                            margin-bottom: 0;
+                            padding-right: 10px;
+                        }
+                    }
+                    .comment-form-email{
+                        display: inline-block;
+                        width: 48%;
+                        margin-right: 16px;
+                        @include xs{
+                            display: block;
+                            width: 100%;
+                            margin-bottom: 10px;
+                            margin-right: 0px;
+                        }
+                        label{
+                            margin-bottom: 0;
+                            padding-right: 10px;
+                        }
+                    }
+                    .comment-form-url{
+                        display: none;
+                    }
+                    .comment-form-cookies-consent{
+                        display: flex;
+                        align-items: center;
+                        label{
+                            padding-right: 5px !important;
+                            margin-bottom: 0 !important;
+                            font-size: 13px;
+                            font-weight: 400;
+                            @include xs{
+                                font-size: 11.5px;
+                                line-height: 14px;
+                            }
+                        }
+                    }
+                }
+            }  
+        }
+        .commentsOpenParent{
+            margin-bottom: 30px;
+            .comment-list{
+                padding: 0 !important;
+                margin: 0 !important;
+                li{
+                    padding: 20px;
+                    margin: 0;
+                    &::before{
+                        content: none;
+                    }
+                    .comment-body{
+                        background-color: $backColorDark2;
+                        padding: 25px;
+                        border-radius: 15px;
+                        @include xs{
+                            padding: 10px;
+                        }
+                        .comment-meta{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-bottom: 10px;
+                            @include xs{
+                                align-items: normal;
+                                flex-direction: column;
+                                font-size: 12px;
+                            }
+                            .comment-author{
+                                display: flex;
+                                align-items: center;
+                                img {
+                                    width: 40px;
+                                    height: 40px;
+                                    border-radius: 100%;
+                                    margin: 0px 0px 5px 20px;
+                                    @include xs{
+                                        width: 30px;
+                                        height: 30px;
+                                        margin-left: 10px;
+                                    }
+                                }
+                                b{
+                                    margin-left: 4px;
+                                }
+                            }
+                            .comment-metadata a time{
+                                font-size: 14px;
+                                color: $textColorLowSat;
+                            }
+                        }
+                        .comment-content{
+                            p{
+                                @include xs{
+                                    font-size: 13px;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                    .children{
+                        @include xs{
+                            padding-right: 7px;
+                        }
+                        li{
+                            padding-left: 0;
+                            border-radius: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        .comment-reply-link {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            margin-right: auto;
+            display: flex;
+            width: max-content;
+            padding: 3px 8px;
+            border-radius: 10px;
+            transition: all 0.3s;
+            &:hover{
+                background-color: $mainColor;
+                color: #000;
+            }
+        }
+    }
+}
+.archiveParent {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 20px;
+    width: 80%;
+    margin: 30px auto;
+    @include xs{
+        width: 100%;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-gap: 10px;
+        margin: 15px auto;
+    }
+    a{
+        .archiveCardImg{
+            overflow: hidden;
+            min-height: 200px;
+            max-height: 200px;
+            @include xs{
+                min-height: 160px;
+                max-height: 160px;
+            }
+            img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px 10px 0px 0px;
+            }
+        }
+        .entry-header{
+            padding: 0 10px;
+            .entry-title{
+                font-weight: 700;
+                font-size: 22px;
+                @include xs{
+                    font-size: 17px;
+                }
+            }
+        }
+        .archivePostFooter{
+            padding: 0 10px;
+            span{
+                @include xs{
+                    font-size: 13px;
+                }
+            }
+        }
+        .readMoreButton{
+            color: $textColorLowSat;
+            font-weight: 900;
+            width: max-content;
+            display: block;
+            &::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 3px;
+                background: $mainColor;
+                transition: width .3s;
+            }
+            &:hover::after {
+                width: 100%;
+            }
+        }
+    }
+}
+.archivePagination{
+    display: flex;
+    justify-content: center;
+    .pagination{
+        display: flex;
+        justify-content: space-between;
+        width: 15%;
+        @include xs{
+            width: 50%;
+        }
+        .next{
+            flex-direction: row-reverse;
+        }
+        .next,.prev{
+            display: flex;
+            align-items: center;
+            a{
+                color: $textColorLowSat;
+                font-weight: 500;
+            }
+            svg{
+                margin: 0px 3px;
+            }
+        }
+    }
+}
+.blogPageFooter{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    .blogPageFooterSec{
+        width: 47%;
+        @include xs{
+            width: 100%;
+        }
+        a{
+            display: flex;
+            margin-top: 20px;
+            font-weight: 700;
+            font-size: 13px;
+            transition: all 0.3s;
+            width: max-content;
+            margin-right: auto;
+            &:hover{
+                color: $mainColor;
+            }
+        }
+    }
+}
+.blog{
+    main{
+        padding: 25px !important;
+    }
+}
+.irFactoryPageSecOneBack{
+    background-color: $backColorLight;
+    .logoSection{
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+        a{
+            img{
+                display: block;
+                width: 140px;
+                height: 40px;
+            }
+        }
+    }
+    .imagesSection{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        img{
+            border-radius: 189px 189px 189px 189px;
+        }
+        .imagesSectionColumnOne{
+            width: 28%;
+            position: relative;
+            @include xs{
+                width: 100%;
+            }
+            .iconPart{
+                position: absolute;
+                bottom: 100px;
+                right: -50px;
+                background-color: #fff;
+                display: flex;
+                align-items: center;
+                padding: 15px 10px 15px 100px;
+                border-radius: 52px 52px 52px 52px;
+                box-shadow: -31px 25px 60px -20px #000000;
+                @include xs{
+                    right: 50px;
+                    bottom: 500px;
+                }
+                span{
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+                svg{
+                    margin-left: 10px;
+                }
+            }
+        }
+        .imagesSectionColumnTwo{
+            width: 23%;
+            text-align: center;
+            @include xs{
+                width: 100%;
+            }
+            span{
+                font-weight: 600;
+                font-size: 13px;
+            }
+            h1{
+                font-size: 20px;
+            }
+            a{
+                margin: 20px auto;
+                padding: 10px 50px;
+            }
+        }
+        .imagesSectionColumnThree{
+            width: 28%;
+            position: relative;
+            @include xs{
+                width: 100%;
+            }
+            .iconPart{
+                position: absolute;
+                top: 300px;
+                left: -50px;
+                background-color: #54595f;
+                display: flex;
+                align-items: center;
+                padding: 15px 10px 15px 100px;
+                border-radius: 52px 52px 52px 52px;
+                box-shadow: -31px 25px 60px -20px #000000;
+                @include xs{
+                    left: 50px;
+                    top: 0px;
+                }
+                span{
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: #fff;
+                }
+                svg{
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+.irFactoryPageSecTwoBack{
+    .detailBoxsParent{
+        .detailBoxs{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            .detailBox{
+                border-radius: 16px;
+                width: 28%;
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                @include xs{
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+                svg{
+                    margin: auto;
+                }
+                p{
+                    font-size: 13px;
+                    line-height: 21px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+.irFactoryPageSecThreeBack{
+    background-color: $backColorLight;
+    .brandsSecBack{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        @include xs{
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-gap: 30px;
+        }
+        .brandSec{
+            width: 60px;
+            height: 60px;
+            @include xs{
+                margin: auto;
+            }
+            img,svg{
+                width: 60px;
+                height: 60px;
+                filter: brightness( 100% ) contrast( 100% ) saturate( 0% ) blur( 0px ) hue-rotate( 0deg );
+                transition-duration: 0.6s;
+                &:hover{
+                    filter: brightness( 100% ) contrast( 100% ) saturate( 100% ) blur( 0px ) hue-rotate( 0deg );
+                }
+            }
+        }
+    }
+}
