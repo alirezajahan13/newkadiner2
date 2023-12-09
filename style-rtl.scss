@@ -37,7 +37,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     .generalButton{
         font-size: 13px;
         font-weight: 500;
+        @include xs{
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
     }
+
 }
 .kadinerAboutUsContainer , .kadinerContactContainer{
     .kadinerAboutUs , .kadinerContact{
@@ -76,6 +82,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
         align-content: center;
         a{
             display: flex;
+            @include xs{
+                width: 48%;
+                margin-bottom: 10px;
+            }
         }
     }
 }
@@ -122,6 +132,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
         border-radius: 10px;
         overflow: hidden;
         width: 24%;
+        @include xs{
+            margin-bottom: 10px;
+            width: 48%;
+        }
     }
 }
 .kadinerIntroSectionContainer{
@@ -142,6 +156,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
                 flex-direction: column;
                 justify-content: space-between;
                 height: auto;
+                @include xs{
+                    width: 100%;
+                    order: 2;
+                }
                 a{
                     &:nth-child(1){
                         margin-bottom: 15px;
@@ -151,6 +169,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
             .introSliderParentLeft{
                 width: 65%;
                 height: 100%;
+                @include xs{
+                    width: 100%;
+                    order: 1;
+                    margin-bottom: 15px;
+                }
             }
         }
     }
@@ -241,10 +264,89 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
         margin-left: 20px;
         cursor: pointer;
         position: relative;
+        &:hover{
+            .productMenu{
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(8px);
+            }
+        }
         .productMenu{
             opacity: 0;
             visibility: hidden;
+            transform: translateY(0);
             position: absolute;
+            background-color: #fff;
+            left: 0;
+            right: 0;
+            width: 150px;
+            top: 100%;
+            height: auto;
+            border-radius: 5px;
+            z-index: 999;
+            box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.09);
+            transition: all 0.3s;
+            ul{
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                padding: 5px;
+                li{
+                    padding: 0;
+                    list-style: none;
+                    transition: all 0.3s;
+                    padding: 5px;
+                    border-radius: 10px;
+                    margin: 0;
+                    a{
+                        transform: translateX(0);
+                        transition: all 0.3s;
+                    }
+                    &::before{
+                        display: none;
+                    }
+                    &:hover{
+                        background-color: #d6d6d6;
+                        >a{
+                            transform: translateX(-5px);
+                        }
+                    }
+                    // ul{
+                    //     display: none;
+                    // }
+                }
+                .menu-item-has-children{
+                    position: relative;
+                    ul{
+                        visibility: hidden;
+                        opacity: 0;
+                        transform: translateX(0);
+                        top: 0;
+                        position: absolute;
+                        background-color: white;
+                        right: 100%;
+                        width: auto;
+                        min-width: 200px;
+                        border-radius: 5px;
+                        box-shadow: 1px 1px 6px 0 rgba(0,0,0,0.09);
+                        z-index: 999;
+                        transition: all 0.3s;
+                        li{
+                            ul{
+                                display: none;
+                            }
+                        }
+                    }
+                    &:hover{
+                        ul{
+                            visibility: visible;
+                            opacity: 1;
+                            transform: translateX(-5px);
+                        }
+                    }
+                }
+            }
         }
         .menuProductParentSvgPart{
             display: flex;
@@ -407,6 +509,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   .swiper-button-next , .swiper-button-prev{
     width: 50px !important;
     height: 50px !important;
+    @include xs{
+        width: 30px !important;
+        height: 30px !important;
+    }
     border-radius: 100%;
     display: flex;
     background-color: rgba(225,225,225,0.7);
