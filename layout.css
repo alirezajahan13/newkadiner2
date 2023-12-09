@@ -63,7 +63,7 @@ a, a:visited {
 }
 
 .mainView {
-  max-width: 1280px;
+  max-width: 1100px;
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -1103,4 +1103,90 @@ select {
 }
 .irFactoryPageSecThreeBack .brandsSecBack .brandSec img:hover, .irFactoryPageSecThreeBack .brandsSecBack .brandSec svg:hover {
   filter: brightness(100%) contrast(100%) saturate(100%) blur(0px) hue-rotate(0deg);
+}
+
+.irFactoryPageSecFourBack .loopProductsSec .moreProductsButton {
+  display: flex;
+  justify-content: end;
+  font-weight: 700;
+}
+
+.irFactoryPageSecFiveBack {
+  background-color: #fbfbfb;
+  padding-bottom: 20px;
+}
+.irFactoryPageSecFiveBack .formSubmitSec .centerHeading {
+  margin-bottom: 30px;
+}
+.irFactoryPageSecFiveBack .formSubmitSec .formSubmitSecInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.irFactoryPageSecFiveBack .formSubmitSec .formSubmitSecInner .formSubmitDetail {
+  width: 44%;
+}
+@media screen and (max-width: 480px) {
+  .irFactoryPageSecFiveBack .formSubmitSec .formSubmitSecInner .formSubmitDetail {
+    width: 100%;
+  }
+}
+.irFactoryPageSecFiveBack .formSubmitSec .formSubmitSecInner .formSubmitDetail .iconSocialSec div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.irFactoryPageSecFiveBack .formSubmitSec .formSubmitSecInner .formSubmitDetail .iconSocialSec div svg {
+  margin-left: 5px;
+}
+.irFactoryPageSecFiveBack .formSubmitSec .formSubmitSecInner .formSubmit {
+  width: 50%;
+}
+@media screen and (max-width: 480px) {
+  .irFactoryPageSecFiveBack .formSubmitSec .formSubmitSecInner .formSubmit {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+.irFactoryPageSecFiveBack .formSubmitSec .formSubmitSecInner .formSubmit form label:nth-child(2) {
+  width: 48%;
+  display: inline-block;
+  margin-left: 18px;
+}
+@media screen and (max-width: 480px) {
+  .irFactoryPageSecFiveBack .formSubmitSec .formSubmitSecInner .formSubmit form label:nth-child(2) {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+.irFactoryPageSecFiveBack .formSubmitSec .formSubmitSecInner .formSubmit form label:nth-child(3) {
+  width: 48%;
+  display: inline-block;
+}
+@media screen and (max-width: 480px) {
+  .irFactoryPageSecFiveBack .formSubmitSec .formSubmitSecInner .formSubmit form label:nth-child(3) {
+    width: 100%;
+  }
+}
+.irFactoryPageSecFiveBack .formSubmitSec .formSubmitSecInner .formSubmit form .wpcf7-submit {
+  width: 30%;
+  margin-right: auto;
+  margin-top: 20px;
+}
+.irFactoryPageSecFiveBack .footerOfFormSec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.irFactoryPageSecFiveBack .footerOfFormSec svg {
+  animation: beat 0.5s infinite alternate;
+  transform-origin: center;
+  margin: 0px 3px;
+}
+@keyframes beat {
+  to {
+    transform: scale(1.25);
+  }
 }/*# sourceMappingURL=layout.css.map */

@@ -520,3 +520,90 @@
         }
     }
 }
+.irFactoryPageSecFourBack{
+    .loopProductsSec{
+        .moreProductsButton{
+        display: flex;
+        justify-content: end;
+        font-weight: 700;
+        }
+    }
+}
+.irFactoryPageSecFiveBack{
+    background-color: $backColorLight;
+    padding-bottom: 20px;
+    .formSubmitSec{
+        .centerHeading{
+            margin-bottom: 30px;
+        }
+        .formSubmitSecInner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .formSubmitDetail {
+                width: 44%;
+                @include xs{
+                    width: 100%;
+                }
+                .iconSocialSec{
+                    div{
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 5px;
+                        svg{
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+            .formSubmit{
+                width: 50%;
+                @include xs{
+                    width: 100%;
+                    margin-top: 20px;
+                }
+                form{
+                    label{
+                        &:nth-child(2){
+                            width: 48%;
+                            display: inline-block;
+                            margin-left: 18px;
+                            @include xs{
+                                width: 100%;
+                                margin-left: 0;
+                            }
+                        }
+                        &:nth-child(3){
+                            width: 48%;
+                            display: inline-block;
+                            // margin-left: 18px;
+                            @include xs{
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .wpcf7-submit{
+                        width: 30%;
+                        margin-right: auto;
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .footerOfFormSec{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+        svg{
+            animation: beat 0.5s infinite alternate;
+	        transform-origin: center;
+            margin: 0px 3px;
+        }
+        @keyframes beat{
+            to { transform: scale(1.25); }
+        }
+    }
+}
