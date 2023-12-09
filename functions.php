@@ -141,9 +141,13 @@ add_action( 'widgets_init', 'newkadiner_widgets_init' );
 function newkadiner_scripts() {
 	wp_enqueue_style( 'newkadiner-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'newkadiner-style', 'rtl', 'replace' );
-
-	wp_enqueue_script( 'newkadiner-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_style( 'layout-style', get_template_directory_uri().'/layout.css', array(), _S_VERSION );
+	wp_enqueue_style( 'swiper-style', get_template_directory_uri(). '/swiper/swiper-bundle.min.css' , array(), _S_VERSION );
+
+	wp_enqueue_script('jquery');
+	wp_enqueue_script( 'newkadiner-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/swiper/swiper-bundle.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'newkadiner-main', get_template_directory_uri() . '/js/kadinermain.js', array('jquery'), _S_VERSION, true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -262,3 +266,160 @@ function pagination_bar() {
         }
     }
 }
+
+
+function kadiner_add_woocommerce_support() {
+	add_theme_support( 'woocommerce', array(
+	'thumbnail_image_width' => 150,
+	'single_image_width'    => 300,
+			'product_grid'          => array(
+				'default_rows'    => 3,
+				'min_rows'        => 2,
+				'max_rows'        => 8,
+				'default_columns' => 4,
+				'min_columns'     => 2,
+				'max_columns'     => 5,
+			),
+	) );
+	}
+add_action( 'after_setup_theme', 'kadiner_add_woocommerce_support' );
+// add_theme_support( 'wc-product-gallery-zoom' );
+add_theme_support( 'wc-product-gallery-lightbox' );
+add_theme_support( 'wc-product-gallery-slider' );
+
+
+add_filter( 'woocommerce_sale_flash', 'add_percentage_to_sale_badge', 20, 3 );
+function add_percentage_to_sale_badge( $html, $post, $product ) {
+
+  if( $product->is_type('variable')){
+      $percentages = array();
+
+      // Get all variation prices
+      $prices = $product->get_variation_prices();
+
+      // Loop through variation prices
+      foreach( $prices['price'] as $key => $price ){
+          // Only on sale variations
+          if( $prices['regular_price'][$key] !== $price ){
+              // Calculate and set in the array the percentage for each variation on sale
+              $percentages[] = round( 100 - ( floatval($prices['sale_price'][$key]) / floatval($prices['regular_price'][$key]) * 100 ) );
+          }
+      }
+      // We keep the highest value
+      $percentage = max($percentages) . '%';
+
+  } elseif( $product->is_type('grouped') ){
+      $percentages = array();
+
+      // Get all variation prices
+      $children_ids = $product->get_children();
+
+      // Loop through variation prices
+      foreach( $children_ids as $child_id ){
+          $child_product = wc_get_product($child_id);
+
+          $regular_price = (float) $child_product->get_regular_price();
+          $sale_price    = (float) $child_product->get_sale_price();
+
+          if ( $sale_price != 0 || ! empty($sale_price) ) {
+              // Calculate and set in the array the percentage for each child on sale
+              $percentages[] = round(100 - ($sale_price / $regular_price * 100));
+          }
+      }
+      // We keep the highest value
+      $percentage = max($percentages) . '%';
+
+  } else {
+      $regular_price = (float) $product->get_regular_price();
+      $sale_price    = (float) $product->get_sale_price();
+
+      if ( $sale_price != 0 || ! empty($sale_price) ) {
+          $percentage    = round(100 - ($sale_price / $regular_price * 100));
+      } else {
+          return $html;
+      }
+  }
+//   return '<span class="customSaleBadge">'. $percentage .' '. esc_html__( 'تخفیف', 'woocommerce' ) .'</span>';
+	if(!$product->is_in_stock()){
+		return '<span class="customSaleBadge">x ناموجود</span>';
+	}
+	else{
+		return '<span class="customSaleBadge">'. $percentage .'%</span>';
+	}
+}
+remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10, 0);
+add_action('woocommerce_single_product_summary', 'woocommerce_show_product_sale_flash', 5, 0);
+
+add_action( 'woocommerce_after_add_to_cart_quantity', 'ts_quantity_plus_sign' );
+function ts_quantity_plus_sign() {
+   echo '<button type="button" class="plus" >+</button></div>';
+}
+ 
+add_action( 'woocommerce_before_add_to_cart_quantity', 'ts_quantity_minus_sign' );
+function ts_quantity_minus_sign() {
+   echo '<div class="customQuantityWrapper"><button type="button" class="minus" >-</button>';
+}
+
+add_action( 'wp_footer', 'ts_quantity_plus_minus' );
+function ts_quantity_plus_minus() {
+   // To run this on the single product page
+   if ( ! is_product() ) return;
+   ?>
+   <script type="text/javascript">
+          
+      jQuery(document).ready(function($){   
+          
+            $('form.cart').on( 'click', 'button.plus, button.minus', function() {
+ 
+            // Get current quantity values
+            var qty = $( this ).closest( 'form.cart' ).find( '.qty' );
+            var val   = parseFloat(qty.val());
+            var max = parseFloat(qty.attr( 'max' ));
+            var min = parseFloat(qty.attr( 'min' ));
+            var step = parseFloat(qty.attr( 'step' ));
+ 
+            // Change the value if plus or minus
+            if ( $( this ).is( '.plus' ) ) {
+               if ( max && ( max <= val ) ) {
+                  qty.val( max );
+               } 
+            else {
+               qty.val( val + step );
+                 }
+            } 
+            else {
+               if ( min && ( min >= val ) ) {
+                  qty.val( min );
+               } 
+               else if ( val > 1 ) {
+                  qty.val( val - step );
+               }
+            }
+             
+         });
+          
+      });
+          
+   </script>
+   <?php
+}
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10, 0);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10, 0);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30, 0);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40, 0);
+
+function custom_price_html( $price, $product ) {
+    if ( ! $product->is_in_stock() ) {
+        $price = '<span class="availableSoon">بزودی موجود می‌شود!</span>';
+    }
+    return $price;
+}
+add_filter( 'woocommerce_get_price_html', 'custom_price_html', 10, 2 );
+
+add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_custom_product_add_to_cart_text' );
+function woocommerce_custom_product_add_to_cart_text() {
+    return __( '', 'woocommerce' );
+}
+
+remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10, 0);
+add_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_price', 10, 0);

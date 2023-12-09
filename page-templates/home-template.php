@@ -19,7 +19,16 @@ get_header();
                 <a href="#"><img src="<?php bloginfo('template_directory') ?>/img/baner2.jpg" alt=""></a>
             </div>
             <div class="introSliderParentLeft">
-                <a href="#"><img src="<?php bloginfo('template_directory') ?>/img/baner3.jpg" alt=""></a>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <a href="#" class="swiper-slide"><img src="<?php bloginfo('template_directory') ?>/img/baner3.jpg" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="<?php bloginfo('template_directory') ?>/img/baner4.jpg" alt=""></a>
+                        <a href="#" class="swiper-slide"><img src="<?php bloginfo('template_directory') ?>/img/baner5.jpg" alt=""></a>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
         </div>
     </div>
