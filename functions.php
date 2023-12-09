@@ -436,3 +436,9 @@ function custom_stock_status_query( $meta_query, $query ) {
     }
     return $meta_query;
 }
+//Add shipping info above the proceed to checkout button
+add_action('woocommerce_proceed_to_checkout', 'jagels_custom_checkout_field');
+
+function jagels_custom_checkout_field() {
+    echo '<a href="#" class="linkToShop">خرید محصول های دیگر</a>';
+}
