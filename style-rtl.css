@@ -86,7 +86,7 @@ a, a:visited {
 }
 
 .mainView {
-  max-width: 1280px;
+  max-width: 1100px;
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -573,4 +573,366 @@ select {
   color: #2e2e2e;
   font-size: 14px;
   margin-right: -15px;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+}
+.sectionHeader .generalHeading, .sectionHeader .generalButton {
+  margin: 0;
+}
+.sectionHeader .generalButton {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.kadinerAboutUsContainer .kadinerAboutUs, .kadinerAboutUsContainer .kadinerContact, .kadinerContactContainer .kadinerAboutUs, .kadinerContactContainer .kadinerContact {
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.kadinerAboutUsContainer .kadinerAboutUs .kadinerAUColumn, .kadinerAboutUsContainer .kadinerAboutUs .kadinerCColumn, .kadinerAboutUsContainer .kadinerContact .kadinerAUColumn, .kadinerAboutUsContainer .kadinerContact .kadinerCColumn, .kadinerContactContainer .kadinerAboutUs .kadinerAUColumn, .kadinerContactContainer .kadinerAboutUs .kadinerCColumn, .kadinerContactContainer .kadinerContact .kadinerAUColumn, .kadinerContactContainer .kadinerContact .kadinerCColumn {
+  width: 40%;
+}
+@media screen and (max-width: 480px) {
+  .kadinerAboutUsContainer .kadinerAboutUs .kadinerAUColumn, .kadinerAboutUsContainer .kadinerAboutUs .kadinerCColumn, .kadinerAboutUsContainer .kadinerContact .kadinerAUColumn, .kadinerAboutUsContainer .kadinerContact .kadinerCColumn, .kadinerContactContainer .kadinerAboutUs .kadinerAUColumn, .kadinerContactContainer .kadinerAboutUs .kadinerCColumn, .kadinerContactContainer .kadinerContact .kadinerAUColumn, .kadinerContactContainer .kadinerContact .kadinerCColumn {
+    width: 100%;
+  }
+}
+.kadinerAboutUsContainer .kadinerAboutUs .kadinerAUColumn h2, .kadinerAboutUsContainer .kadinerAboutUs .kadinerCColumn h2, .kadinerAboutUsContainer .kadinerContact .kadinerAUColumn h2, .kadinerAboutUsContainer .kadinerContact .kadinerCColumn h2, .kadinerContactContainer .kadinerAboutUs .kadinerAUColumn h2, .kadinerContactContainer .kadinerAboutUs .kadinerCColumn h2, .kadinerContactContainer .kadinerContact .kadinerAUColumn h2, .kadinerContactContainer .kadinerContact .kadinerCColumn h2 {
+  font-weight: 600;
+  font-size: 20px;
+}
+.kadinerAboutUsContainer .kadinerAboutUs .aboutImgPart, .kadinerAboutUsContainer .kadinerContact .aboutImgPart, .kadinerContactContainer .kadinerAboutUs .aboutImgPart, .kadinerContactContainer .kadinerContact .aboutImgPart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.kadinerAboutUsContainer .kadinerAboutUs .aboutImgPart h1, .kadinerAboutUsContainer .kadinerContact .aboutImgPart h1, .kadinerContactContainer .kadinerAboutUs .aboutImgPart h1, .kadinerContactContainer .kadinerContact .aboutImgPart h1 {
+  text-align: center;
+}
+
+.homeSerialBanerContainer .homeSerialBaner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+}
+.homeSerialBanerContainer .homeSerialBaner a {
+  display: flex;
+}
+
+.contactFormFooter .siteMessage {
+  margin-top: 0;
+  font-size: 12px;
+}
+.contactFormFooter .contactFormFooterIcon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+@media screen and (max-width: 480px) {
+  .contactFormFooter .contactFormFooterIcon {
+    justify-content: space-between;
+  }
+}
+.contactFormFooter .contactFormFooterIcon a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+}
+@media screen and (max-width: 480px) {
+  .contactFormFooter .contactFormFooterIcon a {
+    justify-content: flex-start;
+    width: 45%;
+    margin-bottom: 15px;
+  }
+}
+.contactFormFooter .contactFormFooterIcon a span {
+  height: 18px;
+  display: flex;
+}
+.contactFormFooter .contactFormFooterIcon a span:first-child {
+  margin-left: 5px;
+}
+
+.kadinerProductCat {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.kadinerProductCat a {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 24%;
+}
+
+.kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer a {
+  display: flex;
+}
+.kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer a img {
+  border-radius: 10px;
+}
+.kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer .generalBannerParentRight {
+  width: 34%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+}
+.kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer .generalBannerParentRight a:nth-child(1) {
+  margin-bottom: 15px;
+}
+.kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer .introSliderParentLeft {
+  width: 65%;
+  height: 100%;
+}
+
+.mainFooterContainer {
+  background-color: #d6d6d6;
+}
+.mainFooterContainer .mainFooter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.mainFooterContainer .mainFooter .generalFooterCulomn {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (max-width: 480px) {
+  .mainFooterContainer .mainFooter .generalFooterCulomn {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+.mainFooterContainer .mainFooter .footerAboutSection {
+  width: 40%;
+}
+@media screen and (max-width: 480px) {
+  .mainFooterContainer .mainFooter .footerAboutSection {
+    width: 100%;
+  }
+}
+.mainFooterContainer .mainFooter .socialMediaContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.mainFooterContainer .mainFooter .socialMediaContainer a {
+  margin-left: 20px;
+}
+
+.kadinerCtaSectionContainer .kadinerCtaSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.kadinerCtaSectionContainer .kadinerCtaSection .generalKadinerCtaColumn {
+  width: 48%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.kadinerCtaSectionContainer .kadinerCtaSection .generalKadinerCtaColumn p {
+  font-weight: 400;
+  text-align: justify;
+}
+@media screen and (max-width: 480px) {
+  .kadinerCtaSectionContainer .kadinerCtaSection .generalKadinerCtaColumn p {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .kadinerCtaSectionContainer .kadinerCtaSection .generalKadinerCtaColumn {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+.kadinerCtaSectionContainer .kadinerCtaSection .generalKadinerCtaColumn a {
+  font-weight: 800;
+  margin-right: auto;
+  margin-left: 0;
+  display: block;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.mainHeaderContainer {
+  background-color: #fff;
+}
+@media screen and (max-width: 480px) {
+  .mainHeaderContainer {
+    display: none;
+  }
+}
+
+.mainHeader, .mobileHeader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainHeader .menuProductParent, .mobileHeader .menuProductParent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+  position: relative;
+}
+.mainHeader .menuProductParent .productMenu, .mobileHeader .menuProductParent .productMenu {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+.mainHeader .menuProductParent .menuProductParentSvgPart, .mobileHeader .menuProductParent .menuProductParentSvgPart {
+  display: flex;
+  margin-left: 5PX;
+}
+.mainHeader .menuProductParent .menuProductParentTitlePart, .mobileHeader .menuProductParent .menuProductParentTitlePart {
+  line-height: 25px;
+  font-weight: 800;
+}
+.mainHeader .HeadewrRight, .mobileHeader .HeadewrRight {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainHeader .HeadewrRight a, .mobileHeader .HeadewrRight a {
+  display: flex;
+}
+.mainHeader .HeadewrRight .desktopMenu ul, .mobileHeader .HeadewrRight .desktopMenu ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.mainHeader .HeadewrRight .desktopMenu ul li, .mobileHeader .HeadewrRight .desktopMenu ul li {
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+}
+.mainHeader .HeadewrRight .desktopMenu ul li::before, .mobileHeader .HeadewrRight .desktopMenu ul li::before {
+  display: none;
+}
+.mainHeader .HeadewrRight .desktopMenu ul li a, .mobileHeader .HeadewrRight .desktopMenu ul li a {
+  padding: 5px 15px;
+  display: flex;
+}
+.mainHeader .HeadewrLeft, .mobileHeader .HeadewrLeft {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.mainHeader .HeadewrLeft .headerWoocomerceItemsPart, .mobileHeader .HeadewrLeft .headerWoocomerceItemsPart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+  border-right: 2px solid #d6d6d6;
+  height: -moz-max-content;
+  height: max-content;
+  margin: auto;
+  margin-right: 10px;
+  padding-right: 10px;
+}
+.mainHeader .HeadewrLeft .headerWoocomerceItemsPart .dgwt-wcas-search-wrapp, .mobileHeader .HeadewrLeft .headerWoocomerceItemsPart .dgwt-wcas-search-wrapp {
+  display: flex;
+  background-color: #ededed;
+  padding: 5px;
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin: 0;
+  border-radius: 5px;
+  max-width: unset !important;
+  width: unset;
+}
+.mainHeader .HeadewrLeft .headerWoocomerceItemsPart .dgwt-wcas-search-wrapp .dgwt-wcas-search-icon, .mobileHeader .HeadewrLeft .headerWoocomerceItemsPart .dgwt-wcas-search-wrapp .dgwt-wcas-search-icon {
+  max-width: unset !important;
+  width: 25px;
+  height: 25px;
+}
+.mainHeader .HeadewrLeft .headerWoocomerceItemsPart .dgwt-wcas-search-wrapp .dgwt-wcas-search-icon svg, .mobileHeader .HeadewrLeft .headerWoocomerceItemsPart .dgwt-wcas-search-wrapp .dgwt-wcas-search-icon svg {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  max-width: unset !important;
+}
+.mainHeader .HeadewrLeft .headerWoocomerceItemsPart .kadinerUsers, .mobileHeader .HeadewrLeft .headerWoocomerceItemsPart .kadinerUsers {
+  display: flex;
+  border: 1px solid #ededed;
+  padding: 4px;
+  border-radius: 5px;
+  margin: 0 15px;
+}
+.mainHeader .HeadewrLeft .headerWoocomerceItemsPart .kadinerMiniCartContainer, .mobileHeader .HeadewrLeft .headerWoocomerceItemsPart .kadinerMiniCartContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ededed;
+  border-radius: 5px;
+  padding: 4px 10px;
+}
+.mainHeader .HeadewrLeft .headerWoocomerceItemsPart .kadinerMiniCartContainer span, .mobileHeader .HeadewrLeft .headerWoocomerceItemsPart .kadinerMiniCartContainer span {
+  height: 25px;
+}
+.mainHeader .HeadewrLeft .headerWoocomerceItemsPart .kadinerMiniCartContainer .numberOfMiniCartItems, .mobileHeader .HeadewrLeft .headerWoocomerceItemsPart .kadinerMiniCartContainer .numberOfMiniCartItems {
+  margin-right: 20px;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.mobileHeaderContainer {
+  display: none;
+  background-color: #fff;
+  padding: 10px 0;
+}
+@media screen and (max-width: 480px) {
+  .mobileHeaderContainer {
+    display: block;
+  }
+}
+.mobileHeaderContainer .generalButton {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+}
+.mobileHeaderContainer .menuProductParent {
+  margin: 0;
+  background-color: #fdcf00;
+  border-radius: 10px;
+  padding: 10px 15px;
+  transition: all 0.3s;
+  font-size: 13px;
+}
+.mobileHeaderContainer .menuProductParent .menuProductParentTitlePart {
+  line-height: 20px;
+  font-weight: 400;
 }/*# sourceMappingURL=style-rtl.css.map */

@@ -90,5 +90,24 @@ get_header();
     </div>
 </div>
 
+<div class="kadinerCtaSectionContainer sectionPadding">
+    <div class="kadinerCtaSection mainView">
+        <div class="generalKadinerCtaColumn">
+            <div class="generalHeading">
+                <h3>درباره کادینر</h2>
+            </div>
+            <p>کادینر، دنیای استیکر و برچسب لپ‌تاپ و گوشی هست، شما توی کادینر خیلی راحت می‌تونید از بین صدها طرح موجود استیکرهای مد نظر خودتون رو انتخاب کنید و خیلی زود تحویلشون بگیرید. توی کادینر ما انواع مختلف استیکر در دسته‌بندی‌های متنوع رو داریم. </p>
+            <a href="https://kadiner.ir/%d8%af%d8%b1%d8%a8%d8%a7%d8%b1%d9%87%e2%80%8c%d9%85%d8%a7/">بیشتر بخوانید</a>
+        </div>
+        <div class="generalKadinerCtaColumn">
+            <div class="generalHeading">
+                <h3>چاپ استیکر اختصاصی</h2>
+            </div>
+            <p>خیلی وقت‌ها بعضی عکس‌ها یا طرح‌هایی که داریم رو دوست داریم تبدیل کنیم به طرح‌های واقعی‌ای که بتونیم جاهای مختلف ازش استفاده کنیم، توی کادینر، میتونید طرح‌های دلخواهتون رو تبدیل کنید به استیکرهای خفن تازه بدون اینکه هزینه‌ی بیشتری بخواید پرداخت کنید.</p>
+            <a href="https://kadiner.ir/product/%d8%a7%d8%b3%d8%aa%db%8c%da%a9%d8%b1-%d8%a7%d8%ae%d8%aa%d8%b5%d8%a7%d8%b5%db%8c/">خرید استیکر اختصاصی</a>
+        </div>
+    </div>
+</div>
+
 <?php
 get_footer();

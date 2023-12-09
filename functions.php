@@ -50,6 +50,7 @@ function newkadiner_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'newkadiner' ),
+			'menu-2' => esc_html__( 'secondary', 'newkadiner' ),
 		)
 	);
 
@@ -175,4 +176,5 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
+// Remove <p> and <br/> from Contact Form 7
+add_filter('wpcf7_autop_or_not', '__return_false');

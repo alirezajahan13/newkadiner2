@@ -25,3 +25,353 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import 'sass/variables';
 @import 'sass/breakpoints';
 @import 'sass/source';
+
+.sectionHeader{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    .generalHeading , .generalButton{
+        margin: 0;
+    }
+    .generalButton{
+        font-size: 13px;
+        font-weight: 500;
+    }
+}
+.kadinerAboutUsContainer , .kadinerContactContainer{
+    .kadinerAboutUs , .kadinerContact{
+        background-color: #fff;
+        border-radius: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        .kadinerAUColumn , .kadinerCColumn{
+            width: 40%;
+            @include xs{
+                width: 100%;
+            }
+            h2{
+                font-weight: 600;
+                font-size: 20px;
+            }
+        }
+        .aboutImgPart{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            h1{
+                text-align: center;
+            }
+        }
+    }
+}
+.homeSerialBanerContainer {
+    .homeSerialBaner{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: center;
+        a{
+            display: flex;
+        }
+    }
+}
+.contactFormFooter{
+    .siteMessage {
+        margin-top: 0;
+        font-size: 12px;
+    }
+    .contactFormFooterIcon{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        @include xs{
+            justify-content: space-between;
+        }
+        a{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: center;
+            @include xs{
+                justify-content: flex-start;
+                width: 45%;
+                margin-bottom: 15px;
+            }
+            span{
+                height: 18px;
+                display: flex;
+                &:first-child{
+                    margin-left: 5px;
+
+                }
+            }
+        }
+    }
+}
+.kadinerProductCat{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    a{
+        display: flex;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 24%;
+    }
+}
+.kadinerIntroSectionContainer{
+    .kadinerIntroSection{
+        .introFlexBannerContainer{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            a{
+                display: flex;
+                img{
+                    border-radius: 10px;
+                }
+            }
+            .generalBannerParentRight{
+                width: 34%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: auto;
+                a{
+                    &:nth-child(1){
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+            .introSliderParentLeft{
+                width: 65%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+.mainFooterContainer{
+    background-color: $backColorDark;
+    .mainFooter{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .generalFooterCulomn{
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            @include xs{
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+        .footerAboutSection{
+            width: 40%;
+            @include xs{
+                width: 100%;
+            }
+        }
+        .socialMediaContainer{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            a{
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+.kadinerCtaSectionContainer{
+    .kadinerCtaSection{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .generalKadinerCtaColumn{
+            width: 48%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            p{
+                font-weight: 400;
+                text-align: justify;
+                @include xs{
+                    font-size: 13px;
+                }
+            }
+            @include xs{
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            a{
+                font-weight: 800;
+                margin-right: auto;
+                margin-left: 0;
+                display: block;
+                width: max-content;
+            }
+        }
+    }
+}
+
+.mainHeaderContainer{
+    background-color: #fff;
+    @include xs{
+        display: none;
+    }
+}
+.mainHeader , .mobileHeader {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    .menuProductParent{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-right: 20px;
+        margin-left: 20px;
+        cursor: pointer;
+        position: relative;
+        .productMenu{
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+        }
+        .menuProductParentSvgPart{
+            display: flex;
+            margin-left: 5PX;
+        }
+        .menuProductParentTitlePart{
+            line-height: 25px;
+            font-weight: 800;
+        }
+    }
+    .HeadewrRight{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        a{
+            display: flex;
+        }
+        .desktopMenu{
+            ul{
+                padding: 00;
+                margin: 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                li{
+                    padding: 0;
+                    margin: 0;
+                    margin-left: 10px;
+                    &::before{
+                        display: none;
+                    }
+                    a{
+                        padding: 5px 15px;
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+    .HeadewrLeft{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .headerWoocomerceItemsPart{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 10px;
+            border-right: 2px solid $backColorDark;
+            height: max-content;
+            margin: auto;
+            margin-right: 10px;
+            padding-right: 10px;
+            .dgwt-wcas-search-wrapp{
+                display: flex;
+                background-color: $backColorDark2;
+                padding: 5px;
+                width: max-content;
+                height: max-content;
+                margin: 0;
+                border-radius: 5px;
+                max-width: unset !important;
+                width: unset;
+                .dgwt-wcas-search-icon{
+                    max-width: unset !important;
+                    width: 25px;
+                    height: 25px;
+                    svg{
+                        width: 25px;
+                        height: 25px;
+                        display: flex;
+                        max-width: unset !important;
+                    }
+                }
+            }
+            .kadinerUsers{
+                display: flex;
+                border: 1px solid $backColorDark2;
+                padding: 4px;
+                border-radius: 5px;
+                margin: 0 15px;
+            }
+            .kadinerMiniCartContainer{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                border: 1px solid $backColorDark2;
+                border-radius: 5px;
+                padding: 4px 10px;
+                span{
+                    height: 25px;
+                }
+                .numberOfMiniCartItems{
+                    margin-right: 20px;
+                    height: max-content;
+                }
+            }
+        }
+    }
+}
+
+.mobileHeaderContainer{
+    display: none;
+    background-color: #fff;
+    padding: 10px 0;
+    @include xs{
+        display: block;
+    }
+    .generalButton{
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+        font-size: 13px;
+    }
+    .menuProductParent{
+        margin: 0;
+        background-color: #fdcf00;
+        border-radius: 10px;
+        padding: 10px 15px;
+        transition: all 0.3s;
+        font-size: 13px;
+        .menuProductParentTitlePart{
+            line-height: 20px;
+            font-weight: 400;
+        }
+    }
+}
