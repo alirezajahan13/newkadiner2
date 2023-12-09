@@ -423,3 +423,11 @@ function woocommerce_custom_product_add_to_cart_text() {
 
 remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10, 0);
 add_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_price', 10, 0);
+
+
+//Add shipping info above the proceed to checkout button
+add_action('woocommerce_proceed_to_checkout', 'jagels_custom_checkout_field');
+
+function jagels_custom_checkout_field() {
+    echo '<a href="#" class="linkToShop">خرید محصول های دیگر</a>';
+}
