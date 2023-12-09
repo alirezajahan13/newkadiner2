@@ -860,6 +860,9 @@ ul.products{
             font-weight: 600 !important;
         }
         .customProductSortWrapper{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             .customProductSort{
                 font-weight: 500 !important;
                 display: flex;
@@ -889,11 +892,21 @@ ul.products{
                 }
             }
             .customProductStockSort{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-items: center;
+                .customProductStockSortLabel{
+                    margin-left: 8px;
+                    font-size: 13px;
+                    color: #646464;
+                }
                 .toggle {
                     position: relative;
                     display: inline-block;
                     width: 60px;
                     height: 34px;
+                    margin-bottom: 0;
                   }
               
                   .toggle input {
@@ -912,18 +925,19 @@ ul.products{
                     background-color: #ccc;
                     -webkit-transition: .4s;
                     transition: .4s;
+                    border-radius: 8px;
                   }
               
                   .slider:before {
                     position: absolute;
                     content: "";
-                    height: 26px;
-                    width: 26px;
-                    left: 4px;
-                    bottom: 4px;
+                    height: 20px;
+                    width: 20px;
+                    left: 5px;
+                    bottom: 6px;
                     background-color: white;
-                    -webkit-transition: .4s;
-                    transition: .4s;
+                    transition: 0.4s;
+                    border-radius: 8px;
                   }
               
                   input:checked + .slider {

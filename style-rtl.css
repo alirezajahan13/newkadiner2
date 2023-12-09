@@ -1420,6 +1420,11 @@ ul.products li.product .price ins {
   font-size: 16px !important;
   font-weight: 600 !important;
 }
+.post-type-archive-product .woocommerce-products-header .customProductSortWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .post-type-archive-product .woocommerce-products-header .customProductSortWrapper .customProductSort {
   font-weight: 500 !important;
   display: flex;
@@ -1448,11 +1453,23 @@ ul.products li.product .price ins {
   color: #fff;
   border-radius: 8px;
 }
+.post-type-archive-product .woocommerce-products-header .customProductSortWrapper .customProductStockSort {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.post-type-archive-product .woocommerce-products-header .customProductSortWrapper .customProductStockSort .customProductStockSortLabel {
+  margin-left: 8px;
+  font-size: 13px;
+  color: #646464;
+}
 .post-type-archive-product .woocommerce-products-header .customProductSortWrapper .customProductStockSort .toggle {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
+  margin-bottom: 0;
 }
 .post-type-archive-product .woocommerce-products-header .customProductSortWrapper .customProductStockSort .toggle input {
   opacity: 0;
@@ -1468,16 +1485,18 @@ ul.products li.product .price ins {
   bottom: 0;
   background-color: #ccc;
   transition: 0.4s;
+  border-radius: 8px;
 }
 .post-type-archive-product .woocommerce-products-header .customProductSortWrapper .customProductStockSort .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 20px;
+  width: 20px;
+  left: 5px;
+  bottom: 6px;
   background-color: white;
   transition: 0.4s;
+  border-radius: 8px;
 }
 .post-type-archive-product .woocommerce-products-header .customProductSortWrapper .customProductStockSort input:checked + .slider {
   background-color: #2196F3;
