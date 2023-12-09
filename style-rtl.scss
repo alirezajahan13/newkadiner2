@@ -392,6 +392,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
         .headerWoocomerceItemsPart{
             display: flex;
             flex-wrap: wrap;
@@ -406,7 +407,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
             .dgwt-wcas-search-wrapp{
                 display: flex;
                 background-color: $backColorDark2;
-                padding: 5px;
+                padding: 11px;
                 width: max-content;
                 height: max-content;
                 margin: 0;
@@ -415,11 +416,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
                 width: unset;
                 .dgwt-wcas-search-icon{
                     max-width: unset !important;
-                    width: 25px;
-                    height: 25px;
+                    width: 20px;
+                    height: 20px;
                     svg{
-                        width: 25px;
-                        height: 25px;
+                        width: 20px;
+                        height: 20px;
                         display: flex;
                         max-width: unset !important;
                     }
@@ -428,7 +429,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
             .kadinerUsers{
                 display: flex;
                 border: 1px solid $backColorDark2;
-                padding: 4px;
+                padding: 11px;
                 border-radius: 5px;
                 margin: 0 15px;
             }
@@ -439,9 +440,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
                 align-items: center;
                 border: 1px solid $backColorDark2;
                 border-radius: 5px;
-                padding: 4px 10px;
+                padding: 10px;
+                position: relative;
                 span{
-                    height: 25px;
+                    height: 20px;
                 }
                 .numberOfMiniCartItems{
                     margin-right: 20px;
@@ -979,12 +981,15 @@ ul.products{
         }
     }
 }
-.kadinerHeaderMenuBtn , .headerMyAcountIcon{
+.kadinerHeaderMenuBtn{
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center ;
+    .generalButton{
+        padding: 11px 20px;
+    }
     &:hover{
         div{
             opacity: 1;
@@ -1031,7 +1036,77 @@ ul.products{
     }
 }
 .headerMyAcountIcon{
-    div{
-        
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    &:hover{
+        div{
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(10px);
+        }   
     }
+    div{
+        transition: all 0.3s;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        background: #fff;
+        padding: 5px;
+        width: 170px;
+        top: 100%;
+        z-index: 999;
+        border-radius: 10px;
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.09);
+        transform: translateY(0);
+        .generalButton{
+            margin: 0;
+        }
+        li{
+            padding: 5px;
+            margin: 0;
+            text-align: center;
+            border-radius: 10px;
+            transition: all 0.3s;
+            a{
+                transition: all 0.3s;
+                display: flex;
+                width: 100%;
+                justify-content: center;
+            }
+            &::before{
+                display: none;
+            }
+            &:hover{
+                background-color: $backColorDark;
+            }
+        }
+    }
+}
+.kadinerUsersLogout{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-right: 15px;
+    padding: 10px;
+    svg{
+        margin-right: 5px;
+    }
+}
+
+.headerMiniCartContainer{
+    position: absolute;
+    background-color: #664949;
+    padding: 10px;
+    z-index: 9999;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 250px;
+    border-radius: 10px;
 }

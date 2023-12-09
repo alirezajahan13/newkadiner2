@@ -953,6 +953,7 @@ select {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 .mainHeader .HeadewrLeft .headerWoocomerceItemsPart, .mobileHeader .HeadewrLeft .headerWoocomerceItemsPart {
   display: flex;
@@ -970,7 +971,7 @@ select {
 .mainHeader .HeadewrLeft .headerWoocomerceItemsPart .dgwt-wcas-search-wrapp, .mobileHeader .HeadewrLeft .headerWoocomerceItemsPart .dgwt-wcas-search-wrapp {
   display: flex;
   background-color: #ededed;
-  padding: 5px;
+  padding: 11px;
   width: -moz-max-content;
   width: max-content;
   height: -moz-max-content;
@@ -982,19 +983,19 @@ select {
 }
 .mainHeader .HeadewrLeft .headerWoocomerceItemsPart .dgwt-wcas-search-wrapp .dgwt-wcas-search-icon, .mobileHeader .HeadewrLeft .headerWoocomerceItemsPart .dgwt-wcas-search-wrapp .dgwt-wcas-search-icon {
   max-width: unset !important;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
 }
 .mainHeader .HeadewrLeft .headerWoocomerceItemsPart .dgwt-wcas-search-wrapp .dgwt-wcas-search-icon svg, .mobileHeader .HeadewrLeft .headerWoocomerceItemsPart .dgwt-wcas-search-wrapp .dgwt-wcas-search-icon svg {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   display: flex;
   max-width: unset !important;
 }
 .mainHeader .HeadewrLeft .headerWoocomerceItemsPart .kadinerUsers, .mobileHeader .HeadewrLeft .headerWoocomerceItemsPart .kadinerUsers {
   display: flex;
   border: 1px solid #ededed;
-  padding: 4px;
+  padding: 11px;
   border-radius: 5px;
   margin: 0 15px;
 }
@@ -1005,10 +1006,11 @@ select {
   align-items: center;
   border: 1px solid #ededed;
   border-radius: 5px;
-  padding: 4px 10px;
+  padding: 10px;
+  position: relative;
 }
 .mainHeader .HeadewrLeft .headerWoocomerceItemsPart .kadinerMiniCartContainer span, .mobileHeader .HeadewrLeft .headerWoocomerceItemsPart .kadinerMiniCartContainer span {
-  height: 25px;
+  height: 20px;
 }
 .mainHeader .HeadewrLeft .headerWoocomerceItemsPart .kadinerMiniCartContainer .numberOfMiniCartItems, .mobileHeader .HeadewrLeft .headerWoocomerceItemsPart .kadinerMiniCartContainer .numberOfMiniCartItems {
   margin-right: 20px;
@@ -1526,19 +1528,22 @@ ul.products li.product .price ins {
   background-color: #ededed !important;
 }
 
-.kadinerHeaderMenuBtn, .headerMyAcountIcon {
+.kadinerHeaderMenuBtn {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.kadinerHeaderMenuBtn:hover div, .headerMyAcountIcon:hover div {
+.kadinerHeaderMenuBtn .generalButton {
+  padding: 11px 20px;
+}
+.kadinerHeaderMenuBtn:hover div {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
-.kadinerHeaderMenuBtn div, .headerMyAcountIcon div {
+.kadinerHeaderMenuBtn div {
   transition: all 0.3s;
   opacity: 0;
   visibility: hidden;
@@ -1552,24 +1557,99 @@ ul.products li.product .price ins {
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.09);
   transform: translateY(-2px);
 }
-.kadinerHeaderMenuBtn div .generalButton, .headerMyAcountIcon div .generalButton {
+.kadinerHeaderMenuBtn div .generalButton {
   margin: 0;
 }
-.kadinerHeaderMenuBtn div li, .headerMyAcountIcon div li {
+.kadinerHeaderMenuBtn div li {
   padding: 3px;
   margin: 0;
   text-align: center;
   margin-bottom: 5px !important;
 }
-.kadinerHeaderMenuBtn div li a, .headerMyAcountIcon div li a {
+.kadinerHeaderMenuBtn div li a {
   transition: all 0.3s;
   transform: translateX(0);
 }
-.kadinerHeaderMenuBtn div li::before, .headerMyAcountIcon div li::before {
+.kadinerHeaderMenuBtn div li::before {
   display: none;
 }
-.kadinerHeaderMenuBtn div li:hover a, .headerMyAcountIcon div li:hover a {
+.kadinerHeaderMenuBtn div li:hover a {
   display: block;
   transform: translateX(-3px);
   color: #fdcf00;
+}
+
+.headerMyAcountIcon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.headerMyAcountIcon:hover div {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(10px);
+}
+.headerMyAcountIcon div {
+  transition: all 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  background: #fff;
+  padding: 5px;
+  width: 170px;
+  top: 100%;
+  z-index: 999;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.09);
+  transform: translateY(0);
+}
+.headerMyAcountIcon div .generalButton {
+  margin: 0;
+}
+.headerMyAcountIcon div li {
+  padding: 5px;
+  margin: 0;
+  text-align: center;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.headerMyAcountIcon div li a {
+  transition: all 0.3s;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.headerMyAcountIcon div li::before {
+  display: none;
+}
+.headerMyAcountIcon div li:hover {
+  background-color: #d6d6d6;
+}
+
+.kadinerUsersLogout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin-right: 15px;
+  padding: 10px;
+}
+.kadinerUsersLogout svg {
+  margin-right: 5px;
+}
+
+.headerMiniCartContainer {
+  position: absolute;
+  background-color: #664949;
+  padding: 10px;
+  z-index: 9999;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 250px;
+  border-radius: 10px;
 }/*# sourceMappingURL=style-rtl.css.map */
