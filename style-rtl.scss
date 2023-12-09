@@ -427,7 +427,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     padding: 20px;
     .woocommerce-product-gallery{
         float: none !important;
-        width: 33% !important;
+        width: 31% !important;
         .flex-viewport{
             img{
                 border-radius: 5px !important;
@@ -455,7 +455,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     }
     .entry-summary{
         float: none !important;
-        width: 35% !important;
+        width: 33% !important;
         h1{
             font-size: 20px;
             color: #444;
@@ -581,6 +581,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 		padding: 0 50px !important;
 		background-color: #fdcf00 !important;
 		transition: all 0.3s !important;
+        width: calc(100% - 100px) !important;
 		&:hover{
 			background-color: #deb500 !important;
 		}
@@ -591,6 +592,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
         overflow: hidden;
         margin-top: 60px;
         height: max-content;
+        width: 33%;
         .tableViewInfo{
             display: flex;
             flex-wrap: wrap;
@@ -601,6 +603,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
             padding: 30px 15px 15px 15px;
             form{
                 margin-bottom: 0 !important;
+                width: 100%;
             }
         }
     }
