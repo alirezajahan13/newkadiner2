@@ -750,7 +750,7 @@
                         width: 40%;
                         margin-right: auto;
                         display: flex;
-                        justify-content: end;
+                        justify-content: space-between;
                         @include xs{
                             width: 100%;
                         }
@@ -759,6 +759,17 @@
                             background-color: #58d5e4;
                             color: #fff;
                             font-weight: 400;
+                            margin-bottom: 0;
+                            padding: 10px 15px;
+                            display: flex;
+                            align-items: center;
+                        }
+                        .linkToShop{
+                            // padding: 10px 15px;
+                            background-color: #757575;
+                            // display: flex;
+                            // align-items: center;
+                            font-size: 16px;
                         }
                     }
                 }
@@ -793,14 +804,17 @@
         }
         .woocommerce{
             background-color: #fff;
-            .woocommerce-form-coupon-toggle{
-                .woocommerce-info{
-
-                }
-                .woocommerce-form-coupon{
-                    .form-row-first{
-                        input.input-text{
-                            background-color: #fff;
+            border-radius: 10px;
+            .woocommerce-form-coupon{
+                .form-row-last{
+                    .button{
+                        &[type=submit]{
+                            background-color: #757575;
+                            border-radius: 10px;
+                            color: #fff;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
                         }
                     }
                 }
@@ -817,10 +831,91 @@
                         tbody{
                             .cart_item{
                                 background-color: $backColorDark2;
+                                .product-total{
+                                    bdi{
+                                        color: #4caf50;
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                        }
+                        tfoot{
+                            .cart-subtotal{
+                                .woocommerce-Price-amount{
+                                    bdi{
+                                    color: #4caf50;
+                                    font-weight: 600;
+                                    }
+                                }
+                            }
+                            .order-total{
+                                .woocommerce-Price-amount{
+                                    bdi{
+                                        color: #4caf50;
+                                        font-size: 18px;
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .woocommerce-checkout-payment{
+                        ul{
+                            &::before{
+                                content: none !important;
+                            }
+                            li{
+                                &::before{
+                                    content: none !important;
+                                }
+                            }
+                        }
+                        .place-order{
+                            .woocommerce-terms-and-conditions-wrapper{
+                                p{
+                                    font-size: 16px;
+                                    font-weight: 600;
+                                    text-align: center;
+                                }
+                            }
+                            .button{
+                                &[type=submit]{
+                                    background-color: #00bfd6;
+                                    width: 100%;
+                                    padding: 20px;
+                                    border-radius: 10px;
+                                    font-size: 18px;
+                                }
                             }
                         }
                     }
                 }
+                .col2-set{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}
+.deliveryPageBack{
+    .deliveryPage{
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        p.subHeadingDelivery{
+            text-align: center;
+            margin: auto;
+            width: 90%;
+        }
+        .deliveryPageInner{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            .textBox{
+                
             }
         }
     }
