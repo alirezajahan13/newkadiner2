@@ -906,8 +906,11 @@
         border-radius: 10px;
         p.subHeadingDelivery{
             text-align: center;
-            margin: auto;
-            width: 90%;
+            margin: 20px auto;
+            width: 88%;
+            color: $textColorSemi;
+            font-size: 15px;
+            font-weight: 600;
         }
         .deliveryPageInner{
             display: flex;
@@ -915,7 +918,38 @@
             justify-content: space-between;
             align-items: flex-start;
             .textBox{
-                
+                width: 50%;
+                text-align: justify;
+                a{
+                    color: $textColorLowSat;
+                    font-weight: 600;
+                }
+            }
+            .imageBox{
+                width: 45%;
+            }
+        }
+    }
+}
+.rulesPageBack{
+    .rulesPage{
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        .rulesPageInner{
+            .imageBox{
+
+            }
+            .textBox{
+                .faq{
+                    #closeFaq{
+                        display: none;
+                    }
+                    .answer{
+                        display: none;
+                        margin-right: 15px;
+                    }
+                }
             }
         }
     }

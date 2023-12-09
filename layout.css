@@ -1436,12 +1436,39 @@ select {
 }
 .deliveryPageBack .deliveryPage p.subHeadingDelivery {
   text-align: center;
-  margin: auto;
-  width: 90%;
+  margin: 20px auto;
+  width: 88%;
+  color: #474b4f;
+  font-size: 15px;
+  font-weight: 600;
 }
 .deliveryPageBack .deliveryPage .deliveryPageInner {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+}
+.deliveryPageBack .deliveryPage .deliveryPageInner .textBox {
+  width: 50%;
+  text-align: justify;
+}
+.deliveryPageBack .deliveryPage .deliveryPageInner .textBox a {
+  color: #767676;
+  font-weight: 600;
+}
+.deliveryPageBack .deliveryPage .deliveryPageInner .imageBox {
+  width: 45%;
+}
+
+.rulesPageBack .rulesPage {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+}
+.rulesPageBack .rulesPage .rulesPageInner .textBox .faq #closeFaq {
+  display: none;
+}
+.rulesPageBack .rulesPage .rulesPageInner .textBox .faq .answer {
+  display: none;
+  margin-right: 15px;
 }/*# sourceMappingURL=layout.css.map */
