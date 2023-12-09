@@ -247,6 +247,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 .mainHeaderContainer{
     background-color: #fff;
+    padding: 10px 0;
     @include xs{
         display: none;
     }
@@ -976,5 +977,61 @@ ul.products{
                 background-color: #ededed !important;
             }
         }
+    }
+}
+.kadinerHeaderMenuBtn , .headerMyAcountIcon{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    &:hover{
+        div{
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }   
+    }
+    div{
+        transition: all 0.3s;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        background: #fff;
+        padding: 5px;
+        width: 170px;
+        top: 100%;
+        z-index: 999;
+        border-radius: 5px;
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.09);
+        transform: translateY(-2px);
+        .generalButton{
+            margin: 0;
+        }
+        li{
+            padding: 3px;
+            margin: 0;
+            text-align: center;
+            margin-bottom: 5px !important;
+            a{
+                transition: all 0.3s;
+                transform: translateX(0);
+            }
+            &::before{
+                display: none;
+            }
+            &:hover{
+                a{
+                    display: block;
+                    transform: translateX(-3px);
+                    color: $mainColor;
+                }
+            }
+        }
+    }
+}
+.headerMyAcountIcon{
+    div{
+        
     }
 }

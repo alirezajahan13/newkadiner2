@@ -815,6 +815,7 @@ select {
 
 .mainHeaderContainer {
   background-color: #fff;
+  padding: 10px 0;
 }
 @media screen and (max-width: 480px) {
   .mainHeaderContainer {
@@ -1523,4 +1524,52 @@ ul.products li.product .price ins {
 }
 .woocommerce-pagination ul li .current {
   background-color: #ededed !important;
+}
+
+.kadinerHeaderMenuBtn, .headerMyAcountIcon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.kadinerHeaderMenuBtn:hover div, .headerMyAcountIcon:hover div {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.kadinerHeaderMenuBtn div, .headerMyAcountIcon div {
+  transition: all 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  background: #fff;
+  padding: 5px;
+  width: 170px;
+  top: 100%;
+  z-index: 999;
+  border-radius: 5px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.09);
+  transform: translateY(-2px);
+}
+.kadinerHeaderMenuBtn div .generalButton, .headerMyAcountIcon div .generalButton {
+  margin: 0;
+}
+.kadinerHeaderMenuBtn div li, .headerMyAcountIcon div li {
+  padding: 3px;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 5px !important;
+}
+.kadinerHeaderMenuBtn div li a, .headerMyAcountIcon div li a {
+  transition: all 0.3s;
+  transform: translateX(0);
+}
+.kadinerHeaderMenuBtn div li::before, .headerMyAcountIcon div li::before {
+  display: none;
+}
+.kadinerHeaderMenuBtn div li:hover a, .headerMyAcountIcon div li:hover a {
+  display: block;
+  transform: translateX(-3px);
+  color: #fdcf00;
 }/*# sourceMappingURL=style-rtl.css.map */
