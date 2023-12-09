@@ -67,3 +67,41 @@ get_header();
         <div class="brandSec"><img src="<?php echo get_template_directory_uri()?>/img/Home-SCG-Icon.png" alt=""></div>
     </div>
 </div>
+<div class="irFactoryPageSecFourBack sectionPadding">
+    <div class="loopProductsSec mainView">
+        <div class="centerHeading">
+            <h2>برخی از استیکرهای ایران فکتوری</h2>
+        </div>
+        <a href="#" class="moreProductsButton">همهٔ استیکرهای ایران فکتوری</a>
+    </div>
+</div>
+<div class="irFactoryPageSecFiveBack sectionPadding">
+    <div class="formSubmitSec mainView">
+        <div class="centerHeading">
+            <h2>ثبت نام</h2>
+        </div>
+        <div class="formSubmitSecInner">
+        <div class="formSubmitDetail">
+            <h3>پیشاپیش از ثبت نام شما خرسندیم!</h3>
+            <ul>
+                <li class="darkListStyle">شما با ثبت نام در ایران فکتوری به رشد خلاقیت در جامعه کمک می‌کنید</li>
+                <li class="darkListStyle">حمایت از کسب‌ و کارهای ایرانی یک دغدغه برای ماست!</li>
+                <li class="darkListStyle">صفحه ویژه کسب و کار شما قابلیت خصوصی‌سازی دارد و معرفی‌نامه شرکت شماست.</li>
+            </ul>
+            <h3>در تماس باشیم.</h3>
+            <div class="iconSocialSec">
+                <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Zm0 0v1.5a2.5 2.5 0 0 0 2.5 2.5v0a2.5 2.5 0 0 0 2.5-2.5V12a9 9 0 1 0-9 9h4" stroke="#2e2e2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="mailto:info@kadiner.ir">info@kadiner.ir</a></div>
+                <div><svg height="18" width="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve" transform="rotate(-90)"><path d="M94.811 21.696c-35.18 22.816-42.091 94.135-28.809 152.262 10.344 45.266 32.336 105.987 69.42 163.165 34.886 53.79 83.557 102.022 120.669 129.928 47.657 35.832 115.594 58.608 150.774 35.792 17.789-11.537 44.218-43.058 45.424-48.714l-18.899-29.14-51.972-80.135c-3.862-5.955-28.082-.512-40.386 6.457-16.597 9.404-31.882 34.636-31.882 34.636-11.38 6.575-20.912.024-40.828-9.142-24.477-11.262-51.997-46.254-73.9-77.947-20.005-32.923-40.732-72.322-41.032-99.264-.247-21.922-2.341-33.296 8.304-41.006 0 0 29.272-3.666 44.627-14.984 11.381-8.392 26.228-28.286 22.366-34.242l-51.972-80.134L157.816.088c-5.657-1.205-45.216 10.071-63.005 21.608z" style="fill:#2e2e2e"/></svg><a href="tel://02128427669">۰۲۱-۲۸۴۲۷۶۶۹</a></div>
+                <div><svg width="18" height="18" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M385 464q-28 0-46-19-19-19-19-46 0-9 1-11l-150-85q-17 17-42 17-27 0-46-19t-19-46q0-26 19-44 19-19 46-19 25 0 42 17l150-84q-1-3-1-14 0-26 19-44 18-19 45-19 26 0 45 19 18 18 19 44 0 27-19 46t-45 19q-23 0-43-17l-150 85q1 2 1 11 0 10-1 13l150 85q20-17 44-17 30 0 46 19t16 45q0 26-16 45t-46 19Z"/></svg><span>kadiner_ir@ در شبکه‌های اجتماعی</span></div>
+                <div><svg width="18" height="18" viewBox="0 0 24 24" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"><path d="M11.994 2a10 10 0 1 0 10 10 10 10 0 0 0-10-10Zm3.18 15.152a.705.705 0 0 1-1.002.352l-2.715-2.11-1.742 1.608a.3.3 0 0 1-.285.039l.334-2.989.01.009.007-.059s4.885-4.448 5.084-4.637c.202-.189.135-.23.135-.23.012-.23-.361 0-.361 0l-6.473 4.164-2.695-.918s-.414-.148-.453-.475c-.041-.324.466-.5.466-.5l10.717-4.258s.881-.392.881.258Z"/></svg><a href="https://t.me/kadiner_admin">kadiner_admin</a></div>
+            </div>
+        </div>
+        <div class="formSubmit">
+            <?php echo do_shortcode('[contact-form-7 id="992f4e3" title="فرم ایران فکتوری"]')?>
+        </div>
+        </div>
+    </div>
+    <div class="footerOfFormSec">
+        <span>ساخته شده با <svg width="12" height="12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 3c-1.536 0-3.078.5-4.25 1.7-2.343 2.4-2.279 6.1 0 8.5L12 23l9.25-9.8c2.279-2.4 2.343-6.1 0-8.5-2.343-2.3-6.157-2.3-8.5 0l-.75.8-.75-.8C10.078 3.5 8.535 3 7 3z" fill="#e74c3c"/></svg> در کادینر</span>
+    </div>
+</div>
