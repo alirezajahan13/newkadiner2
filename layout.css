@@ -150,6 +150,11 @@ p {
 .sectionPadding {
   padding: 40px 0;
 }
+@media screen and (max-width: 480px) {
+  .sectionPadding {
+    padding: 20px 0;
+  }
+}
 
 .centeredText {
   text-align: center;

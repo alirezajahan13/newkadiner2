@@ -173,6 +173,11 @@ p {
 .sectionPadding {
   padding: 40px 0;
 }
+@media screen and (max-width: 480px) {
+  .sectionPadding {
+    padding: 20px 0;
+  }
+}
 
 .centeredText {
   text-align: center;
@@ -588,6 +593,13 @@ select {
   font-size: 13px;
   font-weight: 500;
 }
+@media screen and (max-width: 480px) {
+  .sectionHeader .generalButton {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+}
 
 .kadinerAboutUsContainer .kadinerAboutUs, .kadinerAboutUsContainer .kadinerContact, .kadinerContactContainer .kadinerAboutUs, .kadinerContactContainer .kadinerContact {
   background-color: #fff;
@@ -627,6 +639,12 @@ select {
 }
 .homeSerialBanerContainer .homeSerialBaner a {
   display: flex;
+}
+@media screen and (max-width: 480px) {
+  .homeSerialBanerContainer .homeSerialBaner a {
+    width: 48%;
+    margin-bottom: 10px;
+  }
 }
 
 .contactFormFooter .siteMessage {
@@ -676,6 +694,12 @@ select {
   overflow: hidden;
   width: 24%;
 }
+@media screen and (max-width: 480px) {
+  .kadinerProductCat a {
+    margin-bottom: 10px;
+    width: 48%;
+  }
+}
 
 .kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer {
   display: flex;
@@ -695,12 +719,25 @@ select {
   justify-content: space-between;
   height: auto;
 }
+@media screen and (max-width: 480px) {
+  .kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer .generalBannerParentRight {
+    width: 100%;
+    order: 2;
+  }
+}
 .kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer .generalBannerParentRight a:nth-child(1) {
   margin-bottom: 15px;
 }
 .kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer .introSliderParentLeft {
   width: 65%;
   height: 100%;
+}
+@media screen and (max-width: 480px) {
+  .kadinerIntroSectionContainer .kadinerIntroSection .introFlexBannerContainer .introSliderParentLeft {
+    width: 100%;
+    order: 1;
+    margin-bottom: 15px;
+  }
 }
 
 .mainFooterContainer {
@@ -800,10 +837,80 @@ select {
   cursor: pointer;
   position: relative;
 }
+.mainHeader .menuProductParent:hover .productMenu, .mobileHeader .menuProductParent:hover .productMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(8px);
+}
 .mainHeader .menuProductParent .productMenu, .mobileHeader .menuProductParent .productMenu {
   opacity: 0;
   visibility: hidden;
+  transform: translateY(0);
   position: absolute;
+  background-color: #fff;
+  left: 0;
+  right: 0;
+  width: 150px;
+  top: 100%;
+  height: auto;
+  border-radius: 5px;
+  z-index: 999;
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.09);
+  transition: all 0.3s;
+}
+.mainHeader .menuProductParent .productMenu ul, .mobileHeader .menuProductParent .productMenu ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+.mainHeader .menuProductParent .productMenu ul li, .mobileHeader .menuProductParent .productMenu ul li {
+  padding: 0;
+  list-style: none;
+  transition: all 0.3s;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 0;
+}
+.mainHeader .menuProductParent .productMenu ul li a, .mobileHeader .menuProductParent .productMenu ul li a {
+  transform: translateX(0);
+  transition: all 0.3s;
+}
+.mainHeader .menuProductParent .productMenu ul li::before, .mobileHeader .menuProductParent .productMenu ul li::before {
+  display: none;
+}
+.mainHeader .menuProductParent .productMenu ul li:hover, .mobileHeader .menuProductParent .productMenu ul li:hover {
+  background-color: #d6d6d6;
+}
+.mainHeader .menuProductParent .productMenu ul li:hover > a, .mobileHeader .menuProductParent .productMenu ul li:hover > a {
+  transform: translateX(-5px);
+}
+.mainHeader .menuProductParent .productMenu ul .menu-item-has-children, .mobileHeader .menuProductParent .productMenu ul .menu-item-has-children {
+  position: relative;
+}
+.mainHeader .menuProductParent .productMenu ul .menu-item-has-children ul, .mobileHeader .menuProductParent .productMenu ul .menu-item-has-children ul {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(0);
+  top: 0;
+  position: absolute;
+  background-color: white;
+  right: 100%;
+  width: auto;
+  min-width: 200px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.09);
+  z-index: 999;
+  transition: all 0.3s;
+}
+.mainHeader .menuProductParent .productMenu ul .menu-item-has-children ul li ul, .mobileHeader .menuProductParent .productMenu ul .menu-item-has-children ul li ul {
+  display: none;
+}
+.mainHeader .menuProductParent .productMenu ul .menu-item-has-children:hover ul, .mobileHeader .menuProductParent .productMenu ul .menu-item-has-children:hover ul {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-5px);
 }
 .mainHeader .menuProductParent .menuProductParentSvgPart, .mobileHeader .menuProductParent .menuProductParentSvgPart {
   display: flex;
@@ -975,6 +1082,12 @@ select {
   border-radius: 100%;
   display: flex;
   background-color: rgba(225, 225, 225, 0.7);
+}
+@media screen and (max-width: 480px) {
+  .swiper-button-next, .swiper-button-prev {
+    width: 30px !important;
+    height: 30px !important;
+  }
 }
 .swiper-button-next::after, .swiper-button-prev::after {
   font-size: 20px !important;

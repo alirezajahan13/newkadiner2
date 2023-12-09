@@ -87,6 +87,9 @@ p{
 }
 .sectionPadding{
 	padding: 40px 0;
+	@include xs{
+		padding: 20px 0;
+	}
 }
 .centeredText{
 	text-align: center;
