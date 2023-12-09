@@ -423,3 +423,16 @@ function woocommerce_custom_product_add_to_cart_text() {
 
 remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10, 0);
 add_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_price', 10, 0);
+
+
+add_filter( 'woocommerce_product_query_meta_query', 'custom_stock_status_query', 10, 2 );
+function custom_stock_status_query( $meta_query, $query ) {
+    if ( isset( $_GET['in_stock'] ) && $_GET['in_stock'] == '1' ) {
+        $meta_query[] = array(
+            'key' => '_stock_status',
+            'value' => 'outofstock',
+            'compare' => 'NOT IN'
+        );
+    }
+    return $meta_query;
+}

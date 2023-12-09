@@ -18,7 +18,7 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
-
+echo '<div class="mainView">';
 /**
  * Hook: woocommerce_before_main_content.
  *
@@ -33,7 +33,24 @@ do_action( 'woocommerce_before_main_content' );
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
 	<?php endif; ?>
-
+	<div class="customProductSortWrapper">
+		<div class="customProductSort">
+			<div class="customProductSortTitle">مرتب سازی بر اساس:</div>
+			<div class="customProductSortOptions">
+				<a class="<?php echo (isset($_GET['orderby'])) ? (''):('activeProductSort') ?>" href="<?php echo get_site_url(); ?>/shop/">جدیدترین</a>
+				<a class="<?php echo (isset($_GET['orderby']) && $_GET['orderby']=='popularity') ? ('activeProductSort'):('') ?>" href="<?php echo get_site_url(); ?>/shop/?orderby=popularity">محبوب‌ترین</a>
+				<a class="<?php echo (isset($_GET['orderby']) && $_GET['orderby']=='rating') ? ('activeProductSort'):('') ?>" href="<?php echo get_site_url(); ?>/shop/?orderby=rating">رتبه‌بندی</a>
+				<a class="<?php echo (isset($_GET['orderby']) && $_GET['orderby']=='price') ? ('activeProductSort'):('') ?>" href="<?php echo get_site_url(); ?>/shop/?orderby=price">ارزان‌ترین</a>
+				<a class="<?php echo (isset($_GET['orderby']) && $_GET['orderby']=='price-desc') ? ('activeProductSort'):('') ?>" href="<?php echo get_site_url(); ?>/shop/?orderby=price-desc">گران‌ترین</a>
+			</div>
+		</div>
+		<div class="customProductStockSort">
+			<label class="toggle">
+				<input type="checkbox">
+				<span class="slider"></span>
+			</label>
+		</div>
+	</div>
 	<?php
 	/**
 	 * Hook: woocommerce_archive_description.
@@ -54,7 +71,7 @@ if ( woocommerce_product_loop() ) {
 	 * @hooked woocommerce_result_count - 20
 	 * @hooked woocommerce_catalog_ordering - 30
 	 */
-	do_action( 'woocommerce_before_shop_loop' );
+	// do_action( 'woocommerce_before_shop_loop' );
 
 	woocommerce_product_loop_start();
 
@@ -100,6 +117,6 @@ do_action( 'woocommerce_after_main_content' );
  *
  * @hooked woocommerce_get_sidebar - 10
  */
-do_action( 'woocommerce_sidebar' );
-
+// do_action( 'woocommerce_sidebar' );
+echo '</div>';
 get_footer( 'shop' );

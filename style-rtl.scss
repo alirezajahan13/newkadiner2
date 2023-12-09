@@ -625,7 +625,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
         display: grid !important;
         grid-template-columns: repeat(4,minmax(0,1fr));
         grid-gap: 15px;
-
     }
 }
 ul.products{
@@ -643,6 +642,11 @@ ul.products{
         margin: 0 !important;
         &:before{
             display: none !important;
+        }
+        >a{
+            img{
+                border-radius: 8px !important;
+            }
         }
         a{
             &:nth-child(1){
@@ -705,10 +709,166 @@ ul.products{
                 }
             }
         }
+        .price{
+            text-align: right;
+            .woocommerce-Price-amount{
+                color: #1e1e1e;
+                font-weight: 600;
+                font-size: 15px;
+            }
+            del{
+                display: block !important;
+                bdi{
+                    font-weight: 300;
+                    opacity: 0.8;
+                    font-size: 13px;
+                }
+            }
+            ins{
+                text-decoration: none;
+            }
+        }
     }
 }
 .availableSoon{
     color: #aaa;
     font-size: 14px;
     font-weight: 500;
+}
+.post-type-archive-product{
+    ul.products{
+        display: grid !important;
+        grid-template-columns: repeat(4,minmax(0,1fr));
+        grid-gap: 15px;
+    }
+    .woocommerce-products-header{
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #fff;
+        margin-bottom: 15px;
+        h1{
+            font-size: 16px !important;
+            font-weight: 600 !important;
+        }
+        .customProductSortWrapper{
+            .customProductSort{
+                font-weight: 500 !important;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                font-size: 13px;
+                align-items: center;
+                .customProductSortTitle{
+                    color: #8a8a8a;
+                    margin-left: 15px;
+                }
+                .customProductSortOptions{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    align-items: center;
+                    a{
+                        color: #484848;
+                        display: block;
+                        padding: 5px 15px;
+                    }
+                    .activeProductSort{
+                        background-color: #fdcf00;
+                        color: #fff;
+                        border-radius: 8px;
+                    }
+                }
+            }
+            .customProductStockSort{
+                .toggle {
+                    position: relative;
+                    display: inline-block;
+                    width: 60px;
+                    height: 34px;
+                  }
+              
+                  .toggle input {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                  }
+              
+                  .slider {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: #ccc;
+                    -webkit-transition: .4s;
+                    transition: .4s;
+                  }
+              
+                  .slider:before {
+                    position: absolute;
+                    content: "";
+                    height: 26px;
+                    width: 26px;
+                    left: 4px;
+                    bottom: 4px;
+                    background-color: white;
+                    -webkit-transition: .4s;
+                    transition: .4s;
+                  }
+              
+                  input:checked + .slider {
+                    background-color: #2196F3;
+                  }
+              
+                  input:focus + .slider {
+                    box-shadow: 0 0 1px #2196F3;
+                  }
+              
+                  input:checked + .slider:before {
+                    -webkit-transform: translateX(26px);
+                    -ms-transform: translateX(26px);
+                    transform: translateX(26px);
+                  }
+            }
+        }
+        
+    }
+}
+.woocommerce-breadcrumb{
+    margin: 20px 0 !important;
+    color: #8b8b8b !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    a{
+        color: #3f3f3f !important;
+    }
+}
+.woocommerce-pagination{
+    text-align: right !important;
+    margin: 30px 0 !important;
+    ul{
+        border: none !important;
+        display: block !important;
+        margin: 0 !important;
+        &::before{
+            display: none !important;
+        }
+        li{
+            border: none !important;
+            &::before{
+                display: none !important;
+            }
+            .page-numbers{
+                background-color: #fff !important;
+                border-radius: 5px !important;
+                padding: 5px 15px !important;
+                border: none !important;
+                margin-left: 5px !important;
+            }
+            .current{
+                background-color: #ededed !important;
+            }
+        }
+    }
 }
