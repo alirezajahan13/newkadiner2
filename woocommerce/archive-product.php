@@ -45,6 +45,7 @@ do_action( 'woocommerce_before_main_content' );
 			</div>
 		</div>
 		<div class="customProductStockSort">
+			<div class="customProductStockSortLabel">فقط موجودها:</div>
 			<label class="toggle">
 				<input type="checkbox">
 				<span class="slider"></span>
